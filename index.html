@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>GTA MINI - Banyak NPC + Police</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <div class="loading-logo">
+            <div class="grand">GRAND</div>
+            <div class="theft">THEFT AUTO</div>
+            <div class="auto">MINI</div>
+        </div>
+        
+        <div class="loading-bar-container">
+            <div class="loading-bar" id="loading-bar"></div>
+        </div>
+        
+        <div class="loading-details">
+            <span id="loading-text">Loading assets...</span>
+            <span id="loading-percent">0%</span>
+        </div>
+    </div>
+
+    <!-- MAIN MENU -->
+    <div id="main-menu" class="hidden">
+        <div class="menu-container">
+            <h1>GTA MINI</h1>
+            <div class="menu-buttons">
+                <button class="menu-btn play" id="play-btn">🎮 PLAY</button>
+                <button class="menu-btn" id="settings-btn">⚙️ SETTINGS</button>
+            </div>
+            <div class="menu-footer">1 Player | 15 NPC | 1 Police</div>
+        </div>
+    </div>
+
+    <!-- CHARACTER SELECT -->
+    <div id="character-select" class="hidden">
+        <div class="character-container">
+            <h2>PILIH WARNA</h2>
+            <div class="color-grid">
+                <div class="color-option" data-color="#3498db" style="background: #3498db;"></div>
+                <div class="color-option" data-color="#e74c3c" style="background: #e74c3c;"></div>
+                <div class="color-option" data-color="#2ecc71" style="background: #2ecc71;"></div>
+                <div class="color-option" data-color="#f39c12" style="background: #f39c12;"></div>
+                <div class="color-option" data-color="#9b59b6" style="background: #9b59b6;"></div>
+                <div class="color-option" data-color="#1abc9c" style="background: #1abc9c;"></div>
+            </div>
+            <button class="select-btn" id="confirm-character">MULAI</button>
+        </div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div id="settings-menu" class="hidden">
+        <div class="settings-container">
+            <h2>SETTINGS</h2>
+            <div class="setting-item">
+                <label>Master Volume</label>
+                <input type="range" id="master-volume" min="0" max="100" value="80">
+            </div>
+            <div class="setting-item">
+                <label>SFX Volume</label>
+                <input type="range" id="sfx-volume" min="0" max="100" value="80">
+            </div>
+            <div class="setting-item">
+                <label>Music Volume</label>
+                <input type="range" id="music-volume" min="0" max="100" value="60">
+            </div>
+            <button class="back-btn" id="settings-back">BACK</button>
+        </div>
+    </div>
+
+    <!-- GAME UI -->
+    <div id="game-ui" class="hidden">
+        <div class="top-bar">
+            <div class="stats">
+                <div>💰 <span id="money">1000</span></div>
+                <div>❤️ <span id="health">100</span></div>
+                <div>⭐ <span id="wanted">0</span></div>
+            </div>
+            <div class="wanted-stars" id="wanted-stars"></div>
+            <div class="npc-counter">👥 NPC: <span id="npc-count">15</span></div>
+        </div>
+
+        <div class="canvas-container">
+            <canvas id="game-canvas"></canvas>
+            <div class="minimap">
+                <canvas id="minimap-canvas" width="150" height="150"></canvas>
+            </div>
+            <div class="notification" id="notification"></div>
+        </div>
+
+        <div class="controls">
+            <div class="joystick" id="move-joystick">
+                <div class="joystick-thumb" id="move-thumb"></div>
+                <div class="label">MOVE</div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="action-btn" id="shoot-btn">🔫</button>
+            </div>
+            
+            <div class="joystick" id="camera-joystick">
+                <div class="joystick-thumb" id="camera-thumb"></div>
+                <div class="label">CAMERA</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PAUSE MENU -->
+    <div id="pause-menu" class="hidden">
+        <div class="pause-container">
+            <h2>PAUSE</h2>
+            <button class="pause-btn" id="resume-btn">RESUME</button>
+            <button class="pause-btn" id="quit-btn">QUIT</button>
+        </div>
+    </div>
+
+    <!-- GAME OVER -->
+    <div id="game-over" class="hidden">
+        <div class="gameover-container">
+            <h2>GAME OVER</h2>
+            <button class="gameover-btn" id="restart-btn">RESTART</button>
+        </div>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.128.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.128.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
